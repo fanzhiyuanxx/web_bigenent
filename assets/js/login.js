@@ -37,7 +37,7 @@ $(function () {
     })
 
     // 监听登录表单的提交事件
-    $("form_login").submit(function(e){
+    $("#form_login").submit(function(e){
         e.preventDefault();
         $.ajax({
             url:'/api/login',
@@ -47,7 +47,7 @@ $(function () {
                 if(res.status !== 0) {
                     return layer.msg('登录失败!')
                 }
-                console.log(99);
+                
                 layer.msg('登录成功!')
                 // 将登陆成功得到的token字符串保存到localStorage中
                 localStorage.setItem('token',res.token);
